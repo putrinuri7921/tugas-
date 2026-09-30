@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Akun Meta</title>
+
+    <style>
+        /* 1. RESET BASIC & STYLING UTAMA */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f2f4f7;
+            color: #1c1e21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 580px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 2. HEADER & HEADING */
+        .back-btn {
+            font-size: 32px;
+            color: #444;
+            cursor: pointer;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .meta-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1877f2;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #606770;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        /* 3. FORM & LABEL */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            height: 48px;
+            border: 1px solid #ccd0d5;
+            border-radius: 8px;
+            padding: 0 14px;
+            font-size: 15px;
+            background-color: #fff;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f1ff;
+        }
+
+        /* 4. LAYOUT BARIS (GRID/FLEX) */
+        .row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .row > * {
+            flex: 1;
+        }
+
+        /* 5. INFORMASI & TERMS */
+        .info-text {
+            font-size: 13px;
+            color: #606770;
+            line-height: 1.4;
+            margin-top: 6px;
+        }
+
+        .terms-text {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        a {
+            color: #1877f2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 6. TOMBOL */
+        button {
+            width: 100%;
+            height: 48px;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit {
+            background-color: #1877f2;
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 12px;
+        }
+
+        .btn-submit:hover {
+            background-color: #166fe5;
+        }
+
+        .btn-login {
+            background-color: #e4e6eb;
+            color: #4b4f56;
+        }
+
+        .btn-login:hover {
+            background-color: #d8dadf;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="back-btn">‹</div>
+        <div class="meta-logo">∞ Meta</div>
+
+        <h1>Mulai gunakan Facebook dengan akun Meta</h1>
+        <p class="description">
+            Akun Meta memungkinkan Anda mengakses berbagai teknologi Meta seperti Facebook secara mudah dan aman.
+        </p>
+
+        <!-- Form Pendaftaran -->
+        <form>
+
+            <!-- Nama -->
+            <div class="form-group">
+                <label>Nama</label>
+                <div class="row">
+                    <input type="text" placeholder="Nama depan" required>
+                    <input type="text" placeholder="Nama belakang" required>
+                </div>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="form-group">
+                <label>Tanggal lahir ⓘ</label>
+                <div class="row">
+                    <select required>
+                        <option value="" disabled selected>Hari</option>
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write(`<option>${i}</option>`);
+                            }
+                        </script>
+                    </select>
+
+                    <select required>
+                        <option value="" disabled selected>Bulan</option>
+                        <option>Januari</option>
+                        <option>Februari</option>
+                        <option>Maret</option>
+                        <option>April</option>
+                        <option>Mei</option>
+                        <option>Juni</option>
+                        <option>Juli</option>
+                        <option>Agustus</option>
+                        <option>September</option>
+                        <option>Oktober</option>
+                        <option>November</option>
+                        <option>Desember</option>
+                    </select>
+
+                    <select required>
+                        <option value="" disabled selected>Tahun</option>
+                        <script>
+                            for (let y = new Date().getFullYear(); y >= 1900; y--) {
+                                document.write(`<option>${y}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="form-group">
+                <label>Jenis kelamin ⓘ</label>
+                <select required>
+                    <option value="" disabled selected>Pilih jenis kelamin</option>
+                    <option>Perempuan</option>
+                    <option>Laki-laki</option>
+                    <option>Khusus</option>
+                </select>
+            </div>
+
+            <!-- Kontak -->
+            <div class="form-group">
+                <label>Nomor seluler atau alamat email</label>
+                <input type="text" placeholder="Nomor seluler atau alamat email" required>
+                <p class="info-text">
+                    Anda mungkin menerima pemberitahuan dari kami via SMS. <a href="#">Pelajari alasannya.</a>
+                </p>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label>Kata sandi</label>
+                <input type="password" placeholder="Kata sandi baru" required>
+            </div>
+
+            <!-- Syarat dan Ketentuan -->
+            <p class="terms-text">
+                Orang yang menggunakan layanan kami mungkin telah mengunggah informasi kontak Anda ke Facebook. <a href="#">Pelajari selengkapnya.</a>
+            </p>
+
+            <p class="terms-text">
+                Dengan mengetuk Kirim, Anda menyetujui pembuatan akun serta <a href="#">Ketentuan</a>, <a href="#">Kebijakan Privasi</a>, dan <a href="#">Kebijakan Cookie</a> Facebook.
+            </p>
+
+            <!-- Tombol Aksi -->
+            <button type="submit" class="btn-submit">Kirim</button>
+            <button type="button" class="btn-login">Saya sudah memiliki akun</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
